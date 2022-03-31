@@ -43,7 +43,7 @@ export default{
         document.querySelector('body').setAttribute('style', 'background:black')
     },
     async created(){
-        const response = await axios.get("http://localhost:5000/tutor/view-courses")
+        const response = await axios.get("https://thawing-reaches-79225.herokuapp.com/tutor/view-courses")
         this.courses = response.data.courses
         console.log(this.courses)
         

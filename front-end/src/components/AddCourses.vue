@@ -52,7 +52,7 @@ export default{
     },
     methods:{
         async addCourse(){
-            const result = await axios.post("http://localhost:5000/tutor/add-course/",{
+            const result = await axios.post("https://thawing-reaches-79225.herokuapp.com/tutor/add-course/",{
                 name:this.course.name,
                 description:this.course.description,
                 videoId:this.course.videoId

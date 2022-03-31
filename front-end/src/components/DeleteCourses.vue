@@ -59,7 +59,7 @@ export default{
     // },
     methods: {
             deleteCourse(){
-                let apiURL = `http://localhost:5000/tutor/delete-course/${this.$route.params.id}`;
+                let apiURL = `https://thawing-reaches-79225.herokuapp.com/tutor/delete-course/${this.$route.params.id}`;
                 // let indexOfArrayItem = this.Course.findIndex(i => i._id === id);
 
                 // if (window.confirm("Do you really want to delete?")) {

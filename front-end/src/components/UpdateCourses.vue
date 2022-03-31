@@ -72,7 +72,7 @@ export default{
     // },
     methods: {
         handleUpdateForm() {
-            let apiURL = `http://localhost:5000/tutor/update-course/${this.$route.params.id}`;
+            let apiURL = `https://thawing-reaches-79225.herokuapp.com/tutor/update-course/${this.$route.params.id}`;
 
             axios.post(apiURL, this.course).then((res) => {
                 console.log(res)

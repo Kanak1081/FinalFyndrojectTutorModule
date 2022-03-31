@@ -51,7 +51,7 @@ export default{
         HeaderView
     },
     created(){
-      axios.get("http://localhost:5000/tutor/view-courses")
+      axios.get("https://thawing-reaches-79225.herokuapp.com/tutor/view-courses")
       .then(res=>{
         this.courses = res.data;
         console.log(this.courses)

@@ -58,7 +58,7 @@ export default{
         
     },
     async created(){
-        const response = await axios.get("http://localhost:5000/tutor/count");
+        const response = await axios.get("https://thawing-reaches-79225.herokuapp.com/tutor/count");
         this.count = response.data.count
         this.percent = ((this.count*100)/30).toFixed(2)
         //console.log("COUNT FROM VUE",this.count)
