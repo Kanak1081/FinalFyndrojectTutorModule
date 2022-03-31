@@ -1,6 +1,8 @@
+require("dotenv").config({path:"../config.env"})
 const express = require("express");
+
 const app = express();
-const userRouter = require('./api/routes/users.js')
+const userRouter = require('../routes/users.js')
 const morgan = require("morgan");
 const bodyParser = require("body-parser");
 const Razorpay = require('razorpay')
