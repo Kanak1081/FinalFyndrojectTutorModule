@@ -33,7 +33,7 @@ app.use(bodyParser.json());
 //configuring morgan(logger)
 app.use(morgan("dev"));
 
-app.use('/',userRouter)
+app.use('/tutor',userRouter)
 
 //Handle production
 // if(process.env.NODE_ENV === 'production'){
