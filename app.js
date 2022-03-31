@@ -1,8 +1,9 @@
-require("dotenv").config({path:"../config.env"})
+require("dotenv").config({path:"./config.env"})
+const http = require("http");
 const express = require("express");
-
+const path = require('path')
 const app = express();
-const userRouter = require('../routes/users.js')
+const userRouter = require('./routes/users.js')
 const morgan = require("morgan");
 const bodyParser = require("body-parser");
 const Razorpay = require('razorpay')
@@ -35,11 +36,31 @@ app.use(morgan("dev"));
 app.use('/tutor',userRouter)
 
 //Handle production
-if(process.env.NODE_ENV === 'production'){
-    //Static folder
-    app.use(express.static(__dirname + './public'))
-    //handle SPA
-    app.get(/.*/,(req,res)=> res.sendFile(__dirname + './public/index.html'))
+// if(process.env.NODE_ENV === 'production'){
+//     //Static folder
+//     app.use(express.static(__dirname + './public'))
+//     //handle SPA
+//     app.get(/.*/,(req,res)=> res.sendFile(__dirname + './public/index.html'))
+// }
+
+if(process.env.NODE_ENV==="production"){
+    app.use(express.static(path.join(__dirname,'/front-end/dist')));
+
+    app.get('*',(req,res)=>{
+        res.sendFile(path.join(__dirname,'front-end','build','index.html'))
+    })
 }
+else{
+    app.get("/",(req,res)=>{
+        res.send("API Running")
+    })
+}
+const PORT = process.env.PORT
+const server = http.createServer(app);
+
+server.listen(PORT,()=>{
+    console.log(`Server is running at Port ${PORT}`)
+})
+
 
 module.exports = app
