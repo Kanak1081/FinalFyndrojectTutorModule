@@ -33,7 +33,7 @@ app.use(bodyParser.json());
 //configuring morgan(logger)
 app.use(morgan("dev"));
 
-app.use('/tutor',userRouter)
+app.use('/',userRouter)
 
 //Handle production
 // if(process.env.NODE_ENV === 'production'){
@@ -47,7 +47,7 @@ if(process.env.NODE_ENV==="production"){
     app.use(express.static(path.join(__dirname,'/front-end/dist')));
 
     app.get('*',(req,res)=>{
-        res.sendFile(path.join(__dirname,'front-end','build','index.html'))
+        res.sendFile(path.join(__dirname,'front-end','dist','index.html'))
     })
 }
 else{
