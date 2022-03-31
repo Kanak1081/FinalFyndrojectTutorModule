@@ -46,7 +46,7 @@ export default {
     },
     methods:{
         async signUp(){
-            let result = await axios.post("http://localhost:5000/tutor/user",{
+            let result = await axios.post("https://thawing-reaches-79225.herokuapp.com/tutor/user",{
                 name:this.name,
                 email:this.email,
                 password:this.password

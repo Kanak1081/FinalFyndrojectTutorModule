@@ -42,7 +42,7 @@ export default {
     },
     methods:{
         async login(){
-            let result = await axios.get(`http://localhost:5000/tutor/user/${this.email}`,{
+            let result = await axios.get(`https://thawing-reaches-79225.herokuapp.com/tutor/user/${this.email}`,{
                 email:this.email,
                 password:this.password,
                 
