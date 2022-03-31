@@ -4,8 +4,8 @@
   "description": "This is backend part of Tutor Module",
   "main": "index.js",
   "scripts": {
-    "start": "node './backend/index.js'",
-    "dev": "nodemon './backend/index.js'"
+    "start": "node './app/index.js'",
+    "dev": "nodemon './app/index.js'"
   },
   "keywords": [
     "MongoDB",

@@ -1,5 +1,5 @@
 const http = require("http");
-const app = require('./app.js')
+const app = require('../backend/app.js')
 PORT = process.env.PORT || 5000  
 const server = http.createServer(app);
 
