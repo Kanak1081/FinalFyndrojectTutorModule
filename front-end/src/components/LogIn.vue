@@ -48,7 +48,9 @@ export default {
             })
             if(result.status==200){
                 console.log("Hello from vue login")
+                console.log(result.data.user)
                 localStorage.setItem("user-info",JSON.stringify(result.data))
+                localStorage.setItem("userId",result.data.user[0]._id)
                 this.$router.push('/home')
             }
             
