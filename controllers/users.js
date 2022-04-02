@@ -34,7 +34,7 @@ const create_user = async(req,res)=>{
                 console.log("HEllo coming from backend")
                 res.status(201).json({
                     message:"user successfully created",
-                    user
+                    user:result
                 })
             })
         }
