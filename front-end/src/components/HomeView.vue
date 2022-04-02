@@ -1,32 +1,57 @@
 
 <template>
 <HeaderView/>
-    
-    <div class="container" id="homeviewID">
-        <h1 class="mt-4 text-left text-white fs-1" style="font-weight:900">😊 Welcome To Your Dashboard.</h1>
-        <div class="row mt-3">
-            <div class="col-md-4 card" style="width:350px" >
-                <img class="card-img-top" src="../assets/dashboard.jpg" alt="Card image" style="height:80%">
-                <h4 class="centered">Courses Uploaded</h4>
-                <h2 class="centered-heading">  {{count}}</h2>
-            </div>
-            <div class="col-md-4 card" style="width:350px" >
-                <img class="card-img-top" src="../assets/dashboard.jpg" alt="Card image" style="height:80%">
-                <h4 class="centered">Courses Left to Upload</h4>
-                <h2 class="centered-heading">  {{30-count}}</h2>
-            </div>
-            <div class=" col-md-4 card" style="width:350px">
-                <img class="card-img-top" src="../assets/dashboard.jpg" alt="Card image" style="height:80%">
-                <h4 class="centered">Utilisation</h4>
-                <h2 class="centered-percent">{{percent}} %</h2>
-            </div>
-        </div>
 
-        <div class="row mt-3">
-            <h1 style="color:white;font-weight:500">✌ Check your uploaded courses<a style="text-decoration:none;color:green" href="/display-courses"> here</a></h1>
-        </div>
-    </div>
     
+  <!-- Pricing -->
+
+  <section  id="pricing">
+
+    <h1 class="text-left text-white fs-1" style="font-weight:900">😊 Welcome To Your Dashboard.</h1>
+    
+
+    <div class="row" style="margin-left:5%;">
+
+      <div class="pricing-column col-lg-4 col-md-6">
+        <div class="card">
+          <div class="card-body">
+            <img class="card-img-top" src="../assets/dashboard.jpg" alt="Card image" style="height:80%">
+            <h4 class="centered">Courses Uploaded</h4>
+            <h2 class="centered-heading">  {{count}}</h2>
+          </div> 
+        </div>
+      </div>
+
+      <div class="pricing-column col-lg-4 col-md-6">
+        <div class="card"> 
+          <div class="card-body">
+            <img class="card-img-top" src="../assets/dashboard.jpg" alt="Card image" style="height:80%">
+            <h4 class="centered">Courses Left to Upload</h4>
+            <h2 class="centered-heading">  {{30-count}}</h2>
+          </div>
+        </div>
+      </div>
+
+      <div class="pricing-column col-lg-4">
+        <div class="card">
+          <div class="card-body">
+            <img class="card-img-top" src="../assets/dashboard.jpg" alt="Card image" style="height:80%">
+            <h4 class="centered">Utilisation</h4>
+            <h2 class="centered-percent">{{percent}} %</h2>
+          </div>
+        </div>
+      </div>
+
+
+
+    </div>
+
+    <div class="row">
+        <h1 style="color:white;font-weight:500">✌ Check your uploaded courses<a style="text-decoration:none;color:green" href="/display-courses"> here</a></h1>
+    </div>
+
+  </section>
+
     
 </template>
 
@@ -68,6 +93,7 @@ export default{
 
 
 <style scoped>
+
 h1{
     font-weight: 500;
     font-size: 3rem;
@@ -111,4 +137,20 @@ h1{
     color:black;
     font-weight: 800;
 }
+
+/* Pricing Section */
+
+#pricing {
+  padding: 100px;
+}
+
+.price-text {
+  font-size: 3rem;
+  line-height: 1.5;
+}
+
+.pricing-column {
+  padding: 3% 2%;
+}
+
 </style>

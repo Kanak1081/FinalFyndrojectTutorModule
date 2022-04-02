@@ -60,9 +60,6 @@ h1{
     text-align: left;
     font-family: "Montserrat-Bold";
 }
-body{
-    overflow-x:hidden;
-}
 #empower{
     color:#da388d;
 }
