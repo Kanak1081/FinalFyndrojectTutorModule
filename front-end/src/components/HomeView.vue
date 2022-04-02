@@ -70,7 +70,6 @@ export default{
     
     beforeCreate () {
         document.querySelector('body').setAttribute('style', 'background:black')
-        localStorage.setItem("userId",result.data.user[0]._id)
     },
     components:{
         HeaderView
