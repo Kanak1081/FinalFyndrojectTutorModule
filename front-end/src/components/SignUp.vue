@@ -53,10 +53,11 @@ export default {
             })
             if(result.status==201){
                 console.log("HELLO FROM VUE SIGN UP")
+                this.$router.push('/login')
                 console.log(result.data.user)
                 localStorage.setItem("user-info",JSON.stringify(result.data))
                 localStorage.setItem("userId",result.data.user[0]._id)
-                this.$router.push({name:'HomeView'})
+                
             }
             
         }
@@ -64,7 +65,7 @@ export default {
     mounted(){
         let user = localStorage.getItem('user-info');
         if(user){
-            this.$router.push({name:'HomeView'})
+            this.$router.push('/login')
         }
     }
 }
