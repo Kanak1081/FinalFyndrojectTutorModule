@@ -22,7 +22,6 @@ const create_user = async(req,res)=>{
         else{
             //If we are in this block , that means user is not found. That means we have to create a new user.
             const user = new User({
-                _id: new mongoose.Types.ObjectId(),
                 name : req.body.name,
                 email: req.body.email,
                 password: req.body.password,
