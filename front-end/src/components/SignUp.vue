@@ -55,7 +55,7 @@ export default {
                 console.log("HELLO FROM VUE SIGN UP")
                 console.log(result.data.user)
                 localStorage.setItem("user-info",JSON.stringify(result.data))
-                localStorage.setItem("userId",result.data.user[0]._id)
+                localStorage.setItem("userId",result.data.user[3]._id)
                 this.$router.push({name:'HomeView'})
             }
             
