@@ -58,7 +58,7 @@ export default {
                 console.log(result.data.user)
                 localStorage.setItem("user-info",JSON.stringify(result.data))
                 
-                localStorage.setItem("userId",result.data.user[0]._id)
+                localStorage.setItem("userId",result.data.user._id)
             }
             
         }
