@@ -70,6 +70,7 @@ export default{
     
     beforeCreate () {
         document.querySelector('body').setAttribute('style', 'background:black')
+        localStorage.setItem("userId",result.data.user[0]._id)
     },
     components:{
         HeaderView
@@ -87,6 +88,7 @@ export default{
         this.count = response.data.count
         this.percent = ((this.count*100)/30).toFixed(2)
         //console.log("COUNT FROM VUE",this.count)
+        
     }
 }
 </script>

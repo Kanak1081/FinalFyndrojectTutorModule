@@ -44,6 +44,7 @@ export default {
     beforeCreate () {
         document.querySelector('body').setAttribute('style', 'background:black')
     },
+    
     methods:{
         async signUp(){
             let result = await axios.post("https://thawing-reaches-79225.herokuapp.com/tutor/user",{
@@ -56,8 +57,8 @@ export default {
                 this.$router.push('/login')
                 console.log(result.data.user)
                 localStorage.setItem("user-info",JSON.stringify(result.data))
-                localStorage.setItem("userId",result.data.user[0]._id)
                 
+                localStorage.setItem("userId",result.data.user[0]._id)
             }
             
         }
