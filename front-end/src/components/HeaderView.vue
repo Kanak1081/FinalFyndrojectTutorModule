@@ -1,7 +1,7 @@
 <template>
 
     <div class="navbar">
-        <a class="active" href="/home"> Dashboard</a>
+        <a  href="/home"> Dashboard</a>
         <a href="/add-course"> Add Courses</a>
         <a href="/display-courses"> View Courses</a>
         <a v-on:click="logout" href="#"> Logout</a>
@@ -40,15 +40,11 @@ export default {
   text-decoration: none;
 }
  
-.navbar a.active {
-    display: block;
-  background-color: #04AA6D;
-  color: white;
-}
 
-.navbar a:hover:not(.active) {
-    display: block;
-  background-color: #555;
+
+.navbar a:hover{
+  display: block;
+  box-shadow:5px 5px 5px 5px 5px green;
   color: white;
 }
 

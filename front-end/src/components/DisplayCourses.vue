@@ -1,6 +1,6 @@
 <template>
     <HeaderView />
-    <h1 class="text-left text-white fs-1" style="font-weight:900">❤ See your courses</h1>
+    <!-- <h1 class="text-left text-white fs-1" style="font-weight:900">❤ See your courses</h1>
     <div class="container">
         <div class="row">
             <div id="displayCard" class="mt-4 col-md-4" v-for="item in courses" :key="item._id">
@@ -14,21 +14,37 @@
             </div>
             <hr style="color:white">
         </div>
+    </div> -->
+     
+  <!-- Pricing -->
+
+  <section  id="pricing">
+
+    <h1 class="text-left text-white fs-1" style="font-weight:900">😊 See your courses</h1>
+    
+
+    <div class="row" style="margin-left:5%;">
+
+      <div class="pricing-column col-lg-4 col-md-6" id="displayCard" v-for="item in courses" :key="item._id">
+        <div class="card">
+          
+            <iframe class="embed-responsive-item" v-bind:src="'https://www.youtube.com/embed/'+item.videoId"></iframe>
+                <h4>{{item.name}}</h4>
+                <p>{{item.description}}</p>
+                <div>
+                    <button class="btn btn-rounded btn-success" style="color:white;font-weight:600;margin-right:3%" v-bind:href="'/update-course/'+item._id">EDIT</button>
+                    <button class="btn btn-rounded btn-danger" style="color:white;font-weight:600" v-bind:href="'/delete-course/'+item._id">DELETE</button>
+                </div>
+          
+        </div>
+      </div>
+
     </div>
-    <!-- <table style="margin-left:250px;margin-top:4%">
-        <tr>
-            <th>S. No. </th>
-            <th>NAME</th>
-            <th>DESCRIPTION</th>
-            <th>VIDEO</th>
-        </tr>
-        <tr v-for="item in courses" :key="item.name">
-            <td>{{ item.num }}</td>
-            <td>{{ item.name }}</td>
-            <td>{{ item.description }}</td>  
-            <td><iframe class="embed-responsive-item" v-bind:src="'https://www.youtube.com/embed/'+item.videoId"></iframe></td>  
-        </tr>   
-    </table>  -->
+
+    
+
+  </section>
+    
 </template>
 <script>
 import HeaderView from './HeaderView.vue'
@@ -64,6 +80,9 @@ export default{
 .row{
     margin-top:5%;
 }
+#displayCard{
+    background: black;
+}
 #displayCard p{
     color:white;
     font-weight:500;
@@ -78,5 +97,24 @@ export default{
 .operation{
     text-decoration:none;
     margin-right: 3%;
+}
+
+/* Pricing Section */
+.card{
+    background: black;
+    box-shadow: 5px 5px 5px 5px #da388d;
+    padding-bottom:3%;
+}
+#pricing {
+  padding: 100px;
+}
+
+.price-text {
+  font-size: 3rem;
+  line-height: 1.5;
+}
+
+.pricing-column {
+  padding: 3% 2%;
 }
 </style>
