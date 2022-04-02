@@ -28,13 +28,13 @@ const create_user = async(req,res)=>{
                 password: req.body.password,
             })
             user.save()
-            .then(result=>{
+            .then(user=>{
                 console.log("This is the result from saving the user.")
-                console.log(result);
+                console.log(user);
                 console.log("HEllo coming from backend")
                 res.status(201).json({
                     message:"user successfully created",
-                    user:result
+                    user
                 })
             })
         }
