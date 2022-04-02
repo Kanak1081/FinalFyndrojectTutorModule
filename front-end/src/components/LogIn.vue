@@ -44,8 +44,7 @@ export default {
         async login(){
             let result = await axios.get(`https://thawing-reaches-79225.herokuapp.com/tutor/user/${this.email}`,{
                 email:this.email,
-                password:this.password,
-                
+                password:this.password
             })
             if(result.status==200){
                 console.log("Hello from vue login")

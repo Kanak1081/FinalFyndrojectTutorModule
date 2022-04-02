@@ -50,15 +50,29 @@ const create_user = async(req,res)=>{
 
 //LOGIN API
 
-const get_user = (req,res,next)=>{
-    const {email} = req.params;
-    User.find({email})
+const login = (req,res,next)=>{
+    // const {email} = req.params;
+    // User.find({email})
+    // .exec()
+    // .then((successResult)=>{
+    //     console.log("Hello coming from login backend")
+    //     res.status(200).json({
+    //          message:"Got the current user"
+    //      });
+    // })
+    // .catch((err)=>{
+    //     res.status(500).json({
+    //         message:"There has been an error",
+    //         error:err
+    //     });
+    // });
+    User.find({email:req.body.email.toLowerCase()})
     .exec()
-    .then((successResult)=>{
-        console.log("Hello coming from login backend")
+    .then((user)=>{
         res.status(200).json({
-             message:"Got the current user",
-         });
+            message:"Got the current user",
+            user
+        });
     })
     .catch((err)=>{
         res.status(500).json({
@@ -72,13 +86,32 @@ const get_user = (req,res,next)=>{
 //COURSES 
 
 const add_single_course = (req,res,next)=>{
-    new Course({ 
+    // new Course({ 
+    //     name: req.body.name,
+    //     description: req.body.description,
+    //     videoId: req.body.videoId
+    // }).save()
+    // .then((successResult)=>{
+    //     res.status(201).json({
+    //         message:"New Course Created",
+    //     });
+    // })
+    // .catch((err)=>{
+    //     res.status(500).json({
+    //         message:"There has been an error",
+    //         error:err
+    //     });
+    // });
+    const useRrId = req.params.userId
+    console.log(useRrId)
+    new Course({
+        userId:useRrId,
         name: req.body.name,
         description: req.body.description,
         videoId: req.body.videoId
     }).save()
     .then((successResult)=>{
-        res.status(201).json({
+        res.status(200).json({
             message:"New Course Created",
         });
     })
@@ -91,22 +124,39 @@ const add_single_course = (req,res,next)=>{
 }
 
 const get_all_courses = (req,res,next)=>{
-    Course.find()
+    // Course.find()
+    // .exec()
+    // .then((courses)=>{
+    //     console.log(courses)
+    //     res.status(200).json({  
+    //         courses
+    //     })
+    //     var count = courses.length
+    // })
+    // .catch(
+    //     err=>console.log(err)
+    // )
+    const useRrId = req.params.userId
+    console.log(useRrId)
+    Course.find({userId:useRrId})
     .exec()
     .then((courses)=>{
         console.log(courses)
         res.status(200).json({
-           
+            message:"Got all courses successfully",
             courses
         })
-        var count = courses.length
     })
     .catch(
         err=>console.log(err)
     )
 }
+
+
 const get_count = (req,res)=>{
-    Course.find()
+    const useRrId = req.params.userId
+    console.log(useRrId)
+    Course.find({userId:useRrId})
     .exec()
     .then((courses)=>{
         var count = courses.length
@@ -117,6 +167,7 @@ const get_count = (req,res)=>{
         err=>console.log(err)
     )
 }
+
 const get_single_course = (req,res,next)=>{
     const {courseId} = req.params;
     Course.find({courseId})
@@ -208,4 +259,4 @@ const delete_single_course = (req,res,next)=>
 
 
 
-module.exports = {get_count,create_user,get_user,add_single_course,get_all_courses,get_single_course,update_single_course,delete_single_course};
+module.exports = {get_count,create_user,login,add_single_course,get_all_courses,get_single_course,update_single_course,delete_single_course};

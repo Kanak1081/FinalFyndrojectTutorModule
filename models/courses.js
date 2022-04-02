@@ -1,6 +1,9 @@
 const mongoose = require('mongoose')
 //Course Schema 
 const courseSchema = mongoose.Schema({
+    userId:{
+        type:String
+    },
     name : {
         type:String,
         required:true
