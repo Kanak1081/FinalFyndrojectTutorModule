@@ -21,7 +21,9 @@
             <div class="col-lg-4"></div>
         </div>
     </div>
-    
+    <footer style="color:white;font-weight:500;text-align:center;">
+    <p>Made with ❤ by Kanak Yadav</p>
+</footer>
 </template>
 
 <script>

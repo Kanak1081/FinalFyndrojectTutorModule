@@ -30,8 +30,7 @@
     </div>
 </div>
 <footer style="color:white;font-weight:500;text-align:center;">
-    <p>Made with ❤</p>
-    <p>© Kanak Yadav</p>
+    <p>Made with ❤ by Kanak Yadav</p>
 </footer>
 
 </template>
