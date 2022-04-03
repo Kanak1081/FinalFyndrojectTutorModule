@@ -32,8 +32,8 @@
                 <h4>{{item.name}}</h4>
                 <p>{{item.description}}</p>
                 <div>
-                    <button class="btn btn-rounded btn-success" style="color:white;font-weight:600;margin-right:3%" v-bind:href="'/update-course/'+item._id">EDIT</button>
-                    <button class="btn btn-rounded btn-danger" style="color:white;font-weight:600" v-bind:href="'/delete-course/'+item._id">DELETE</button>
+                    <button class="btn btn-rounded btn-success" style="color:white;font-weight:600;margin-right:3%"><a v-bind:href="'/update-course/'+item._id">EDIT</a></button>
+                    <button class="btn btn-rounded btn-danger" style="color:white;font-weight:600"><a v-bind:href="'/delete-course/'+item._id">DELETE</a></button>
                 </div>
           
         </div>
