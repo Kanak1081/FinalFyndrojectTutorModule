@@ -52,9 +52,7 @@
 
   </section>
 
-<footer style="color:white;font-weight:500;text-align:center;position:fixed;bottom:0">
-    <p>Made with ❤ by Kanak Yadav</p>
-</footer>
+
 </template>
 
 <script>
