@@ -7,7 +7,7 @@
 
   <section  id="pricing">
 
-    <h1 class="text-left text-white fs-1" style="font-weight:900">😊{{user[0].name}} Welcome To Your Dashboard.</h1>
+    <h1 class="text-left text-white fs-1" style="font-weight:900">😊 Welcome To Your Dashboard.</h1>
     
 
     <div class="row" style="margin-left:5%;">
