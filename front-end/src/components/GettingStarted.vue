@@ -1,5 +1,4 @@
 <template>
-<!-- eslint-disable -->
 <div class="container-fluid" id="title">
     <div class="row">
         <div class="col-lg-12">

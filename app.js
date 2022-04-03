@@ -6,7 +6,6 @@ const app = express();
 const userRouter = require('./routes/users.js')
 const morgan = require("morgan");
 const bodyParser = require("body-parser");
-const Razorpay = require('razorpay')
 const cors = require('cors')
 
 app.use(cors())
@@ -14,9 +13,8 @@ app.use(express.json())
 
 const mongoose = require("mongoose");
 
-const dbURL = "mongodb+srv://Kanak1081:kanak1234@cluster0.wa3dw.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
 //CREATING A SERVER USING EXPRESS
-mongoose.connect(dbURL,{
+mongoose.connect(process.env.MONGO_URI,{
     useNewUrlParser: true,
     useUnifiedTopology:true
 }).then(

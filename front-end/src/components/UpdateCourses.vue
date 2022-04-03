@@ -5,17 +5,10 @@
     <div class="container-fluid">
         <h1 style="font-size:3rem;color:white;">Welcome to Update Courses Page</h1>
         <div class="row">
-            <div class="col-md-2 col-lg-4"></div>
-            <div class="col-md-2 col-lg-4">
+            <div class="col-lg-4"></div>
+            <div class="col-lg-4">
                 <form @submit.prevent="handleUpdateForm">
-        <!-- <div class="mt-3">
-            <label class="fs-5 fw-bold text-white text-right">Enter ID</label>
-            <input v-model="course._id" type="text" name="ID" placeholder="Enter Id for the Course">
-        </div> -->
-        <!-- <div class="mt-3">
-            <label class="fs-5 fw-bold text-white text-right">Enter Number</label>
-            <input v-model="course.num" type="text" name="num" placeholder="Enter Number of the Course">
-        </div> -->
+        
         <div class="mt-3">
             <label class="fs-5 fw-bold text-white text-right">Enter Name</label>
             <input v-model="course.name" type="text" name="name" placeholder="Enter Name of the Course">
@@ -33,7 +26,7 @@
         </div>
     </form>
             </div>
-            <div class="col-md-2 col-lg-4"></div>
+            <div class="col-lg-4"></div>
         </div>
     </div>
     
@@ -55,28 +48,13 @@ export default{
     beforeCreate () {
         document.querySelector('body').setAttribute('style', 'background:black')
     },
-    // methods:{
-    //     async updateCourse(){
-    //         const result = await axios.put(`http://localhost:5000/tutor/update-course/${this.$route.params._id}`,{
-    //              _id:this.course._id,
-    //              num:this.course.num,
-    //             name:this.course.name,
-    //             description:this.course.description,
-    //              videoId:this.course.videoId
-    //         });
-    //         if(result.status==200){
-    //             this.$router.push({name:'ViewCourses'})
-    //         }
-
-    //     }
-    // },
     methods: {
         handleUpdateForm() {
             let apiURL = `https://thawing-reaches-79225.herokuapp.com/tutor/update-course/${this.$route.params.id}`;
 
             axios.post(apiURL, this.course).then((res) => {
                 console.log(res)
-                this.$router.push('/display-courses')
+                this.$router.push({name:'DisplayCourses'})
             }).catch(error => {
                 console.log(error)
             });

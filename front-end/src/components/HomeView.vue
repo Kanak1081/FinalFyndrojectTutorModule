@@ -7,7 +7,7 @@
 
   <section  id="pricing">
 
-    <h1 class="text-left text-white fs-1" style="font-weight:900">😊 Welcome To Your Dashboard.</h1>
+    <h1 class="text-left text-white fs-1" style="font-weight:900">😊{{user[0].name}} Welcome To Your Dashboard.</h1>
     
 
     <div class="row" style="margin-left:5%;">
@@ -47,7 +47,7 @@
     </div>
 
     <div class="row">
-        <h1 style="color:white;font-weight:500">✌ Check your uploaded courses<a style="text-decoration:none;color:green" href="/display-courses"> here</a></h1>
+        <h3 style="color:white;font-weight:500">✌ Check your uploaded courses<a style="text-decoration:none;color:green" href="/display-courses"> here</a></h3>
     </div>
 
   </section>
@@ -86,8 +86,6 @@ export default{
         const response = await axios.get(`https://thawing-reaches-79225.herokuapp.com/tutor/count/${localStorage.getItem('userId')}`);
         this.count = response.data.count
         this.percent = ((this.count*100)/30).toFixed(2)
-        //console.log("COUNT FROM VUE",this.count)
-        
     }
 }
 </script>

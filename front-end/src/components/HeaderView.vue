@@ -67,35 +67,3 @@ export default {
   }
 }
 </style>
-
-//  .nav{
-//     background: #49b6c4;
-//     overflow:auto;
-//     height: 100%;
-//     width: 200px;
-//     position: fixed;
-//     margin: 0;
-//     padding: 0;
-// } 
-// .nav a{
-//     display: block;
-//     text-decoration: none;
-//     font-size: 20px;
-//     padding: 5%;
-//     color: black;
-//     font-weight: 600;
-// }
-
-// .nav a:hover {
-//     display: inline;
-//   background: #5474a7;
-//   color:black;
-//   top: 0;
-//   left: 0;
-//   bottom: 0;
-//   right: 0;
-//   width: 100%;
-//   height: 10%;
-//   z-index:-1;
-// } 
-

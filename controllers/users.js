@@ -50,21 +50,7 @@ const create_user = async(req,res)=>{
 //LOGIN API
 
 const login = (req,res,next)=>{
-    // const {email} = req.params;
-    // User.find({email})
-    // .exec()
-    // .then((successResult)=>{
-    //     console.log("Hello coming from login backend")
-    //     res.status(200).json({
-    //          message:"Got the current user"
-    //      });
-    // })
-    // .catch((err)=>{
-    //     res.status(500).json({
-    //         message:"There has been an error",
-    //         error:err
-    //     });
-    // });
+   
     User.find({email:req.body.email.toLowerCase()})
     .exec()
     .then((user)=>{
@@ -85,22 +71,7 @@ const login = (req,res,next)=>{
 //COURSES 
 
 const add_single_course = (req,res,next)=>{
-    // new Course({ 
-    //     name: req.body.name,
-    //     description: req.body.description,
-    //     videoId: req.body.videoId
-    // }).save()
-    // .then((successResult)=>{
-    //     res.status(201).json({
-    //         message:"New Course Created",
-    //     });
-    // })
-    // .catch((err)=>{
-    //     res.status(500).json({
-    //         message:"There has been an error",
-    //         error:err
-    //     });
-    // });
+   
     const useRrId = req.params.userId
     console.log(useRrId)
     new Course({
@@ -123,18 +94,7 @@ const add_single_course = (req,res,next)=>{
 }
 
 const get_all_courses = (req,res,next)=>{
-    // Course.find()
-    // .exec()
-    // .then((courses)=>{
-    //     console.log(courses)
-    //     res.status(200).json({  
-    //         courses
-    //     })
-    //     var count = courses.length
-    // })
-    // .catch(
-    //     err=>console.log(err)
-    // )
+   
     const useRrId = req.params.userId
     console.log(useRrId)
     Course.find({userId:useRrId})
@@ -186,26 +146,7 @@ const get_single_course = (req,res,next)=>{
 }
 
 const update_single_course = (req,res,next)=>{
-    // const {courseId} = req.body_id;
-    // const updateOps = {};
-
-    // for(const [key, value] of Object.entries(req.body) ){
-    //     updateOps[key] = value;
-    // } 
     
-    // Course.updateOne({_id:courseId}, {$set: updateOps})
-    // .exec()
-    // .then((successResult)=>{
-    //     res.status(200).json({
-    //         message:"Course updated",
-    //     });
-    // })
-    // .catch((err)=>{
-    //     res.status(500).json({
-    //         message:"There has been an error",
-    //         error:err
-    //     });
-    // });
     Course.findByIdAndUpdate(req.params.id, {
         $set: req.body
       }, 
@@ -224,24 +165,6 @@ const update_single_course = (req,res,next)=>{
 
 const delete_single_course = (req,res,next)=>
 {
-    // const {courseId} = req.params;
-
-    // Course.remove({
-    //     num:courseId
-    // })
-    // .exec()
-    // .then((successResult)=>{
-    //     res.status(200).json({
-    //         message:"Course deleted",
-    //     })
-    // })
-
-    // .catch((err)=>{
-    //     res.status(500).json({
-    //         message:"There has been an error",
-    //         error:err
-    //     });
-    // })
     
         Course.findByIdAndRemove(req.params.id, (error, data) => {
           if (error) {

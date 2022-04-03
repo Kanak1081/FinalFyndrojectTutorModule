@@ -4,8 +4,8 @@
     <h1 style="font-size:3rem;color:white;"> Welcome to Add Courses Page</h1>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-2 col-lg-4"></div>
-            <div class="col-md-2 col-lg-4">
+            <div class="col-lg-4"></div>
+            <div class="col-lg-4">
                 <form>
         <div class="mt-3">
             <label class="fs-5 fw-bold text-white text-right">Enter Name</label>
@@ -24,7 +24,7 @@
         </div>
     </form>
             </div>
-            <div class="col-md-2 col-lg-4"></div>
+            <div class="col-lg-4"></div>
         </div>
     </div>
     
@@ -60,7 +60,7 @@ export default{
             });
             if(result.status==201){
                 localStorage.setItem("course-info",JSON.stringify(result.data))
-                this.$router.push('/display-courses')
+                this.$router.push({name:'DisplayCourses'})
             }
 
         }

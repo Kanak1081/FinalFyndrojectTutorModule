@@ -3,8 +3,8 @@
     <h1 id="loginheading" class="fw-bold text-white">Log In</h1>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-2 col-lg-4"></div>
-            <div class="col-md-2 col-lg-4">
+            <div class="col-lg-4"></div>
+            <div class="col-lg-4">
                 <div class="mt-4">
                     <label class="fs-5 fw-bold text-white">Email</label>
                     <input type="text" v-model="email" placeholder="Enter Email">
@@ -20,7 +20,7 @@
                     <router-link id="signUpId" to="/sign-up" style="color:green">Create an account? Sign Up</router-link>
                 </div>    
             </div>
-            <div class="col-md-2 col-lg-4"></div>
+            <div class="col-lg-4"></div>
         </div>
         
     </div>
