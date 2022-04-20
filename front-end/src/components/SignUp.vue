@@ -95,7 +95,7 @@ export default {
   //   },
   // },
   methods: {
-    registerUser() {
+    async registerUser() {
       // let user = {
       //   username: this.username,
       //   email: this.email,
