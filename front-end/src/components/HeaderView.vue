@@ -36,19 +36,19 @@ export default {
 
 .navbar a {
   display: block;
-  color: white;
-  padding: 2%; 
+  color: white; 
   text-decoration: none;
   font-weight:700;
-  margin:1%;
 }
  
 
 
 .navbar a:hover{
   display: block;
+   padding: 2%;
   background:black;
   color: white;
+  margin:1%;
 }
 
 
