@@ -1,4 +1,4 @@
-
+/*eslint-disable */
 <template>
 <HeaderView/>
 
@@ -81,9 +81,7 @@ export default{
 
       let activeUser = localStorage.activeUser;
       this.user = JSON.parse(activeUser);
-      if(!user){
-            this.$router.push({name:'SignUp'})
-        }
+
     }
   },
     async created(){
