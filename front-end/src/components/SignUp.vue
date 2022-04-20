@@ -72,8 +72,11 @@ export default {
 
         localStorage.setItem("userId", result.data.user._id);
       }
-      else{
+      else if(result.status == 409){
         alert("Email Id already registered!!")
+      }
+      else{
+        alert("Some error occurred")
       }
     },
   },
