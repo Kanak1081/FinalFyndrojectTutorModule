@@ -107,7 +107,7 @@ h1{
     opacity: 0.5;
 }
 .card{
-    background: black;
+    background:rgb(31 41 55);
     margin:1%;
     border-radius: 20px;
 }
