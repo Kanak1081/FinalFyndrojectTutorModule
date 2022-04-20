@@ -37,7 +37,7 @@ export default {
 .navbar a {
   display: block;
   color: white;
-  //padding: 16px; 
+  /*padding: 16px; */
   text-decoration: none;
 }
  
