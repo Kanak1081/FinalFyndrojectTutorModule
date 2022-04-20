@@ -57,7 +57,7 @@ const login = (req,res,next)=>{
    User.find({email:req.body.email.toLowerCase()})
     .exec()
     .then((user)=>{
-        if(password.localeCompare(User.password)){
+        if((password.localeCompare(User.password)==0)){
             res.status(200).json({
                 message:"Got the current user",
                 user
