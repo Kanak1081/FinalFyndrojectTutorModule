@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router(); 
 
-const {add_single_course,get_all_courses,update_single_course,delete_single_course, get_count} = require("../controllers/users.js")
+const {create_user,login,add_single_course,get_all_courses,update_single_course,delete_single_course, get_count} = require("../controllers/users.js")
 
 router.get("/count/:username",get_count)
 router.post("/login",login)
