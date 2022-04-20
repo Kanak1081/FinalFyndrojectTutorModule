@@ -37,7 +37,7 @@ export default {
 .navbar a {
   display: block;
   color: white;
-  padding: 16px; 
+  //padding: 16px; 
   text-decoration: none;
 }
  
@@ -46,7 +46,6 @@ export default {
 .navbar a:hover{
   display: block;
   background:black;
-   box-shadow:5px 5px 5px 5px 5px green; 
   color: white;
 }
 
