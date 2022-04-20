@@ -49,7 +49,7 @@
 
 <script>
 import validateRegisterInput from "../validation/validateRegisterInput";
-//import axios from "axios";
+import axios from "axios";
 export default {
   name: "SignUp",
   data() {
