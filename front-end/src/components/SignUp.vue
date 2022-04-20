@@ -63,9 +63,9 @@ export default {
       users: [],
     };
   },
-  beforeCreate() {
-    document.querySelector("body").setAttribute("style", "background:black");
-  },
+  // beforeCreate() {
+  //   document.querySelector("body").setAttribute("style", "background:black");
+  // },
 
   // methods: {
   //   async signUp() {

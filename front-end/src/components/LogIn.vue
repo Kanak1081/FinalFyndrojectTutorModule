@@ -46,9 +46,9 @@ export default {
             errors: {},
         }
     },
-     beforeCreate () {
-        document.querySelector('body').setAttribute('style', 'background:black')
-    },
+    //  beforeCreate () {
+    //     document.querySelector('body').setAttribute('style', 'background:black')
+    // },
     // methods:{
     //     async login(){
     //         let result = await axios.post("https://thawing-reaches-79225.herokuapp.com/tutor/login",{
