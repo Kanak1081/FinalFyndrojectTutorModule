@@ -62,7 +62,8 @@ export default{
     name:'HomeView',
     data(){
         return{
-            name:'',
+            user: "",
+            users: [],
             count:this.count,
             percent:this.percent
         }
