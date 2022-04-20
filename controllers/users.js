@@ -54,10 +54,10 @@ const login = (req,res,next)=>{
    if(!(email && password)){
        res.status(400).send("Field is required")
    }
-   const loggedInUser = User.find({email:req.body.email.toLowerCase()})
+   User.find({email:req.body.email.toLowerCase()})
     .exec()
     .then((user)=>{
-        if(loggedInUser && (await bcrypt.compare(password,User.password))){
+        if(bcrypt.compare(password,User.password)){
             return res.status(403).json({
                 message: "Password mismatch"
             })
