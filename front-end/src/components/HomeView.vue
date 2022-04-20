@@ -75,15 +75,15 @@ export default{
         HeaderView
     },
     mounted(){
-        let user = localStorage.getItem('user-info');
-        this.name = JSON.parse(user).name
+        let user = localStorage.getItem('users');
+        this.name = JSON.parse(users.username)
         if(!user){
             this.$router.push({name:'SignUp'})
         }
         
     },
     async created(){
-        const response = await axios.get(`https://thawing-reaches-79225.herokuapp.com/tutor/count/${localStorage.getItem('userId')}`);
+        const response = await axios.get(`https://thawing-reaches-79225.herokuapp.com/tutor/count/${localStorage.getItem('username')}`);
         this.count = response.data.count
         this.percent = ((this.count*100)/30).toFixed(2)
     }

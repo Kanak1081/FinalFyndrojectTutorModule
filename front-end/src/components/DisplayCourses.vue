@@ -42,7 +42,7 @@ export default{
         document.querySelector('body').setAttribute('style', 'background:black')
     },
     async created(){
-        const response = await axios.get(`https://thawing-reaches-79225.herokuapp.com/tutor/view-courses/${localStorage.getItem('userId')}`)
+        const response = await axios.get(`https://thawing-reaches-79225.herokuapp.com/tutor/view-courses/${localStorage.getItem('username')}`)
         this.courses = response.data.courses
         console.log(this.courses)
         
