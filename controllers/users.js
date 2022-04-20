@@ -2,7 +2,7 @@ const User = require("../models/users.js");
 const Course = require("../models/courses.js");
 
 const mongoose = require("mongoose");
-const bcrypt = require('bcrypt');
+//const bcrypt = require('bcrypt');
 
 //REGISTER API
 
@@ -57,7 +57,7 @@ const login = (req,res,next)=>{
    User.find({email:req.body.email.toLowerCase()})
     .exec()
     .then((user)=>{
-        if(bcrypt.compare(password,User.password)){
+        if(password.localeCompare(User.password)){
             res.status(200).json({
                 message:"Got the current user",
                 user
