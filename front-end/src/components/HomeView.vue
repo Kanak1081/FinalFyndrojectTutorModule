@@ -74,14 +74,18 @@ export default{
     components:{
         HeaderView
     },
-    mounted(){
-        let user = localStorage.getItem('users');
-        this.name = JSON.parse(users.username)
-        if(!user){
+    mounted() {
+    if (localStorage.activeUser) {
+      let lsUsers = localStorage.users;
+      this.users = JSON.parse(lsUsers);
+
+      let activeUser = localStorage.activeUser;
+      this.user = JSON.parse(activeUser);
+      if(!user){
             this.$router.push({name:'SignUp'})
         }
-        
-    },
+    }
+  },
     async created(){
         const response = await axios.get(`https://thawing-reaches-79225.herokuapp.com/tutor/count/${localStorage.getItem('username')}`);
         this.count = response.data.count
