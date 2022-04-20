@@ -79,12 +79,12 @@ export default {
     // }
     methods: {
         async loginUser(){
-            let user = await axios.post("https://thawing-reaches-79225.herokuapp.com/tutor/login",{
+            let result = await axios.post("https://thawing-reaches-79225.herokuapp.com/tutor/login",{
                 username:this.username,
                 email:this.email,
                 password:this.password
             })
-            const { isInvalid, errors } = validateLoginInput(user);
+            const { isInvalid, errors } = validateLoginInput(result);
 
             if (isInvalid) {
                 this.errors = errors;
