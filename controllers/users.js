@@ -58,15 +58,15 @@ const login = (req,res,next)=>{
     .exec()
     .then((user)=>{
         if(bcrypt.compare(password,User.password)){
-            return res.status(403).json({
-                message: "Password mismatch"
-            })
-        }
-        else{
             res.status(200).json({
                 message:"Got the current user",
                 user
             });
+        }
+        else{
+            return res.status(403).json({
+                message: "Password mismatch"
+            })
         }
         
     })
