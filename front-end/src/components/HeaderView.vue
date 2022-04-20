@@ -46,7 +46,8 @@ export default {
 .navbar a:hover{
   display: block;
   cursor: pointer;
-  color: white;
+  color: black;
+  font-weight:800;
 }
 
 
