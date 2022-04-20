@@ -38,6 +38,7 @@ export default {
   display: block;
   color: white;
   padding: 16px; 
+  font-weight:600;
   text-decoration: none;
 }
  
@@ -45,6 +46,7 @@ export default {
 
 .navbar a:hover{
   display: block;
+  font-weight:600;
   cursor: pointer;
   color: black;
 }

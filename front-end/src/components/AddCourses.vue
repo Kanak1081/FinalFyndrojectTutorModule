@@ -65,7 +65,7 @@ export default{
                 localStorage.setItem("course-info",JSON.stringify(result.data))
                 this.$router.push({name:'DisplayCourses'})
             })
-            .catch((err)=>{
+            .catch(err=>{
                 console.log(err)
             })
 
