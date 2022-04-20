@@ -20,7 +20,7 @@
         </div>
         <div class="mt-4">
           <label class="fs-5 fw-bold text-white">Password</label>
-          <input type="text" v-model="password" placeholder="Enter Password" />
+          <input type="password" v-model="password" placeholder="Enter Password" />
         </div>
         <div class="mt-4">
           <button id="registerBTN" v-on:click="signUp" class="btn btn-rounded">
@@ -77,7 +77,7 @@ export default {
         alert("Email Id already registered!!")
       }
       else{
-        
+
         alert("Some error occurred")
       }
     },

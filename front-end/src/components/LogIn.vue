@@ -11,7 +11,7 @@
                 </div>
                 <div class="mt-4">
                     <label class="fs-5 fw-bold text-white">Password</label>
-                    <input type="text" v-model="password" placeholder="Enter Password">
+                    <input type="password" v-model="password" placeholder="Enter Password">
                 </div>
                 <div class="mt-4">
                     <button id="loginBTN" v-on:click="login" class="btn btn-rounded">Log In</button>
