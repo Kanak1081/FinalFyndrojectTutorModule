@@ -47,7 +47,7 @@
     </div>
 
     <div class="row">
-        <h3 style="color:white;font-weight:500">✌ Check your uploaded courses<a style="text-decoration:none;color:green" href="/display-courses"> here</a></h3>
+        <h3 style="color:white;font-weight:500">✌ Check your uploaded courses<a style="text-decoration:none;color:#069ba2;font-weight:600;" href="/display-courses"> here</a></h3>
     </div>
 
   </section>
@@ -69,7 +69,7 @@ export default{
     },
     
     beforeCreate () {
-        document.querySelector('body').setAttribute('style', 'background:rgb(31 41 55)')
+        document.querySelector('body').setAttribute('style', 'background:black')
     },
     components:{
         HeaderView
@@ -107,7 +107,7 @@ h1{
     opacity: 0.5;
 }
 .card{
-    background:rgb(31 41 55);
+    background:black;
     margin:1%;
     border-radius: 20px;
 }

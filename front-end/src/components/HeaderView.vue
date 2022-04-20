@@ -27,7 +27,7 @@ export default {
 .navbar {
   margin: 0;
   padding: 0;
-  width: 10%;
+  width: 12%;
   position: fixed;
   height: 100%; 
   overflow: auto;
@@ -37,8 +37,10 @@ export default {
 .navbar a {
   display: block;
   color: white;
-  /*padding: 16px; */
+  padding: 2%; 
   text-decoration: none;
+  font-weight:700;
+  margin:1%;
 }
  
 
