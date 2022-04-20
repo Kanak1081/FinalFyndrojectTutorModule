@@ -1,5 +1,6 @@
 
 <template>
+<fragment>
     <HeaderView/>
     <h1 style="font-size:3rem;color:white;"> Welcome to Add Courses Page</h1>
     <div class="container-fluid">
@@ -27,7 +28,7 @@
             <div class="col-lg-4"></div>
         </div>
     </div>
-    
+</fragment>  
 </template>
 
 <script>
@@ -42,8 +43,6 @@ export default{
     },
     data(){
         return{
-            user: "",
-            users: [],
             course:{
                 name:'',
                 description:'',
@@ -56,7 +55,7 @@ export default{
     },
     methods:{  
         addCourse(){
-            axios.post(`https://thawing-reaches-79225.herokuapp.com/tutor/add-course/${localStorage.getItem('username')}`,{
+            axios.post(`https://thawing-reaches-79225.herokuapp.com/tutor/add-course/${localStorage.getItem('userId')}`,{
                 name:this.course.name,
                 description:this.course.description,
                 videoId:this.course.videoId

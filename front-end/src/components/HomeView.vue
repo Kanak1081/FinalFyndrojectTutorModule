@@ -1,5 +1,6 @@
-/*eslint-disable */
+
 <template>
+<fragment>
 <HeaderView/>
 
     
@@ -52,7 +53,7 @@
 
   </section>
 
-
+</fragment>
 </template>
 
 <script>
@@ -62,8 +63,7 @@ export default{
     name:'HomeView',
     data(){
         return{
-            user: "",
-            users: [],
+            name:'',
             count:this.count,
             percent:this.percent
         }
@@ -75,18 +75,16 @@ export default{
     components:{
         HeaderView
     },
-    mounted() {
-    if (localStorage.activeUser) {
-      let lsUsers = localStorage.users;
-      this.users = JSON.parse(lsUsers);
-
-      let activeUser = localStorage.activeUser;
-      this.user = JSON.parse(activeUser);
-
-    }
-  },
+    mounted(){
+        let user = localStorage.getItem('user-info');
+        this.name = JSON.parse(user).name
+        if(!user){
+            this.$router.push({name:'SignUp'})
+        }
+        
+    },
     async created(){
-        const response = await axios.get(`https://thawing-reaches-79225.herokuapp.com/tutor/count/${localStorage.getItem('username')}`);
+        const response = await axios.get(`https://thawing-reaches-79225.herokuapp.com/tutor/count/${localStorage.getItem('userId')}`);
         this.count = response.data.count
         this.percent = ((this.count*100)/30).toFixed(2)
     }

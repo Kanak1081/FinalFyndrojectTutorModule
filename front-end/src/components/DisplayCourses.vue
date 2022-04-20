@@ -1,4 +1,5 @@
 <template>
+<fragment>
     <HeaderView />
 
   <section  id="pricing">
@@ -27,7 +28,7 @@
     
 
   </section>
-   
+</fragment> 
 </template>
 <script>
 import HeaderView from './HeaderView.vue'
@@ -42,15 +43,13 @@ export default{
         document.querySelector('body').setAttribute('style', 'background:black')
     },
     async created(){
-        const response = await axios.get(`https://thawing-reaches-79225.herokuapp.com/tutor/view-courses/${localStorage.getItem('username')}`)
+        const response = await axios.get(`https://thawing-reaches-79225.herokuapp.com/tutor/view-courses/${localStorage.getItem('userId')}`)
         this.courses = response.data.courses
         console.log(this.courses)
         
     },
     data(){
         return{
-            user: "",
-            users: [],
             courses:[]
         }
     }

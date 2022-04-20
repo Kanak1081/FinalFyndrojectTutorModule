@@ -1,5 +1,6 @@
 
 <template>
+<fragment>
     <HeaderView/>
     
     <div class="container-fluid">
@@ -21,7 +22,7 @@
             <div class="col-lg-4"></div>
         </div>
     </div>
-  
+</fragment>
 </template>
 
 <script>

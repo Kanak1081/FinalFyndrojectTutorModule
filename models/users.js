@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 
 //User Schema
 const userSchema = mongoose.Schema({
-    username : {
+    name : {
         type:String,
         required:true
     },
@@ -13,10 +13,6 @@ const userSchema = mongoose.Schema({
         match:/[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/
     },
     password:{
-        type:String,
-        required:true
-    },
-    password2:{
         type:String,
         required:true
     }
