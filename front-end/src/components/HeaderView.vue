@@ -47,7 +47,6 @@ export default {
   display: block;
   cursor: pointer;
   color: black;
-  font-weight:800;
 }
 
 

@@ -59,12 +59,15 @@ export default{
                 description:this.course.description,
                 videoId:this.course.videoId
                 
-            });
-            if(result.status==201){
+            })
+            .then((result)=>{
                 alert("Course Added Successfully!!")
                 localStorage.setItem("course-info",JSON.stringify(result.data))
                 this.$router.push({name:'DisplayCourses'})
-            }
+            })
+            .catch((err)=>{
+                console.log(err)
+            })
 
         }
     },
