@@ -4,18 +4,19 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-4"></div>
-            <div class="col-lg-4" novalidate @submit.prevent="loginUser">
-                <div class="mt-4" >
+            <div class="col-lg-4" >
+                <form novalidate @submit.prevent="loginUser" >
+                    <div class="mt-4 form-group" >
                     <label class="fs-5 fw-bold text-white">Username</label>
                     <input type="text" :class="`form-control ${errors.username ? 'is-invalid' : ''}`" v-model="username" placeholder="Enter Username">
                     <div class="invalid-feedback">{{ errors.username }}</div>
                 </div>
-                <div class="mt-4" >
+                <div class="mt-4 form-group" >
                     <label class="fs-5 fw-bold text-white">Email</label>
                     <input type="text" :class="`form-control ${errors.email ? 'is-invalid' : ''}`" v-model="email" placeholder="Enter Email">
                     <div class="invalid-feedback">{{ errors.email }}</div>
                 </div>
-                <div class="mt-4">
+                <div class="mt-4 form-group">
                     <label class="fs-5 fw-bold text-white">Password</label>
                     <input type="password" :class="`form-control ${errors.password ? 'is-invalid' : ''}`" v-model="password" placeholder="Enter Password">
                     <div class="invalid-feedback">{{ errors.password }}</div>
@@ -25,7 +26,9 @@
                 </div>
                 <div class="mt-4">
                     <router-link id="signUpId" to="/sign-up" style="color:green">Create an account? Sign Up</router-link>
-                </div>    
+                </div>  
+                </form>
+                  
             </div>
             <div class="col-lg-4"></div>
         </div>

@@ -5,32 +5,28 @@
     <div class="row">
       <div class="col-lg-4"></div>
       <div class="col-lg-4">
-        <div class="mt-4" novalidate @submit.prevent="registerUser()">
-          <label class="fs-5 fw-bold text-white">Username</label>
-          <input
-            class="border-rounded"
-            :class="`form-control ${errors.username ? 'is-invalid' : ''}`"
-            type="text"
-            v-model="username"
-            placeholder="Enter Username"
-          />
-          <div class="invalid-feedback">{{ errors.username }}</div>
-        </div>
-        <div class="mt-4">
+          <form novalidate @submit.prevent="registerUser()">
+            <div class="mt-4 form-group">
+              <label class="fs-5 fw-bold text-white">Username</label>
+              <input class="border-rounded" :class="`form-control ${errors.username ? 'is-invalid' : ''}`" type="text" v-model="username" placeholder="Enter Username"/>
+              <div class="invalid-feedback">{{ errors.username }}</div>
+            </div>
+            <div class="mt-4 form-group">
           <label class="fs-5 fw-bold text-white">Email</label>
           <input :class="`form-control ${errors.email ? 'is-invalid' : ''}`" type="text" v-model="email" placeholder="Enter Email" />
           <div class="invalid-feedback">{{ errors.email }}</div>
         </div>
-        <div class="mt-4">
+        <div class="mt-4 form-group">
           <label class="fs-5 fw-bold text-white">Password</label>
           <input :class="`form-control ${ errors.password ? 'is-invalid' : ''}`" type="password" v-model="password" placeholder="Enter Password" />
           <div class="invalid-feedback">{{ errors.password }}</div>
         </div>
-        <div class="mt-4">
+        <div class="mt-4 form-group">
           <label class="fs-5 fw-bold text-white">Confirm Password</label>
           <input :class="`form-control ${ errors.password2 ? 'is-invalid' : ''}`" type="password" v-model="password2" placeholder="Confirm Password" />
           <div class="invalid-feedback">{{ errors.password2 }}</div>
         </div>
+        
         <div class="mt-4">
           <button id="registerBTN" v-on:click="signUp" class="btn btn-rounded form-control">
             Sign Up
@@ -41,6 +37,9 @@
             >Already have an account? Log In</router-link
           >
         </div>
+          </form>
+          
+        
       </div>
       <div class="col-lg-4"></div>
     </div>
