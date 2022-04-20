@@ -78,45 +78,42 @@ export default {
     //     }
     // }
     methods: {
-    loginUser() {
-      let credentials = {
-        username: this.username,
-        password: this.password,
-      };
+        async loginUser(){
+            let user = await axios.post("https://thawing-reaches-79225.herokuapp.com/tutor/login",{
+                username:this.username,
+                email:this.email,
+                password:this.password
+            })
+            const { isInvalid, errors } = validateLoginInput(user);
 
-      const { isInvalid, errors } = validateLoginInput(credentials);
+            if (isInvalid) {
+                this.errors = errors;
+            } 
+            else {
+                this.errors = {};
+                // login code goes here
+                let lsUsers = localStorage.users;
+                lsUsers = JSON.parse(lsUsers);
+                let usernameIndex = lsUsers.findIndex((user) => user.username === result.username);
+                if (usernameIndex > -1) {
+                    let passwordIndex = lsUsers.findIndex((user) => user.password === result.password);
 
-      if (isInvalid) {
-        this.errors = errors;
-      } else {
-        this.errors = {};
-        // login code goes here
-        let lsUsers = localStorage.users;
-        lsUsers = JSON.parse(lsUsers);
-        let usernameIndex = lsUsers.findIndex(
-          (user) => user.username === credentials.username
-        );
-        if (usernameIndex > -1) {
-          let passwordIndex = lsUsers.findIndex(
-            (user) => user.password === credentials.password
-          );
-
-          if (passwordIndex > -1) {
-            let activeUser = lsUsers.find(
-              (user) => user.username === credentials.username
-            );
-            localStorage.setItem("activeUser", JSON.stringify(activeUser));
-            this.$router.push("/dashboard");
-            window.location.reload();
-          } else {
-            this.errors.password = "Password does not match!";
-          }
-        } else {
-          this.errors.username = "Username does not exist!";
-        }
-      }
-    },
-  },
+                    if (passwordIndex > -1) {
+                        let activeUser = lsUsers.find((user) => user.username === result.username);
+                        localStorage.setItem("activeUser", JSON.stringify(activeUser));
+                        this.$router.push("/home");
+                        window.location.reload();
+                    }
+                    else {
+                        this.errors.password = "Password does not match!";
+                    }
+                } 
+                else {
+                    this.errors.username = "Username does not exist!";
+                }
+            }
+        },
+    }
 }
 </script>
 

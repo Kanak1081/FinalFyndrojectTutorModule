@@ -49,6 +49,8 @@ export default{
     },
     data(){
         return{
+            user: "",
+            users: [],
             courses:[]
         }
     }

@@ -1,4 +1,4 @@
-//const User = require("../models/users.js");
+const User = require("../models/users.js");
 const Course = require("../models/courses.js");
 
 const mongoose = require("mongoose");
@@ -6,78 +6,78 @@ const mongoose = require("mongoose");
 
 //REGISTER API
 
-// const create_user = async(req,res)=>{
-//     User.find({email:req.body.email})
-//     .exec()
-//     .then(user=>{
-//         console.log("This is the user");
-//         console.log(user);
-//         //console.log("User ends");
-//         //2. If user email is found. That means user already exists which means we have to return a conflict
-//         if(user.length>=1){
-//             return res.status(409).json({
-//                 message: "Email already exists"
-//             })
-//         }
-//         else{
-//             //If we are in this block , that means user is not found. That means we have to create a new user.
-//             const user = new User({
-//                 name : req.body.name,
-//                 email: req.body.email,
-//                 password: req.body.password,
-//             })
-//             user.save()
-//             .then(user=>{
-//                 console.log("This is the result from saving the user.")
-//                 console.log(user);
-//                 console.log("HEllo coming from backend")
-//                 res.status(201).json({
-//                     message:"user successfully created",
-//                     user
-//                 })
-//             })
-//         }
-//     })
-//     .catch(err=>{
-//         console.log(err);
-//         res.status(500).json({
-//             error:err
-//         })
-//     })
-// }
+const create_user = async(req,res)=>{
+    User.find({email:req.body.email})
+    .exec()
+    .then(user=>{
+        console.log("This is the user");
+        console.log(user);
+        //console.log("User ends");
+        //2. If user email is found. That means user already exists which means we have to return a conflict
+        if(user.length>=1){
+            return res.status(409).json({
+                message: "Email already exists"
+            })
+        }
+        else{
+            //If we are in this block , that means user is not found. That means we have to create a new user.
+            const user = new User({
+                name : req.body.name,
+                email: req.body.email,
+                password: req.body.password,
+            })
+            user.save()
+            .then(user=>{
+                console.log("This is the result from saving the user.")
+                console.log(user);
+                console.log("HEllo coming from backend")
+                res.status(201).json({
+                    message:"user successfully created",
+                    user
+                })
+            })
+        }
+    })
+    .catch(err=>{
+        console.log(err);
+        res.status(500).json({
+            error:err
+        })
+    })
+}
 
 
 //LOGIN API
 
-// const login = (req,res,next)=>{
-//    const {email,password} = req.body;
-//    if(!(email && password)){
-//        res.status(400).send("Field is required")
-//    }
-//    User.find({email:req.body.email.toLowerCase()})
-//     .exec()
-//     .then((user)=>{
-//         // if((password.localeCompare(User.password)!=0)){
-//         //     res.status(403).json({
-//         //         message: "Password mismatch"
-//         //     })
-//         // }
-//         // else{
-//             res.status(200).json({
-//                 message:"Got the current user",
-//                 user
-//             });
+const login = (req,res,next)=>{
+   const {email,password} = req.body;
+   if(!(email && password)){
+       res.status(400).send("Field is required")
+   }
+   User.find({email:req.body.email.toLowerCase()})
+    .exec()
+    .then((user)=>{
+        // if((password.localeCompare(User.password)!=0)){
+        //     res.status(403).json({
+        //         message: "Password mismatch"
+        //     })
+        // }
+        // else{
+            res.status(200).json({
+                message:"Got the current user",
+                user
+            });
             
-//         //}
+        //}
         
-//     })
-//     .catch((err)=>{
-//         res.status(500).json({
-//             message:"There has been an error",
-//             error:err
-//         });
-//     });
-// }
+    })
+    .catch((err)=>{
+        res.status(500).json({
+            message:"There has been an error",
+            error:err
+        });
+    });
+}
 
 
 //COURSES 
@@ -193,4 +193,4 @@ const delete_single_course = (req,res,next)=>
 
 
 
-module.exports = {get_count,add_single_course,get_all_courses,get_single_course,update_single_course,delete_single_course};
+module.exports = {create_user,login,get_count,add_single_course,get_all_courses,get_single_course,update_single_course,delete_single_course};

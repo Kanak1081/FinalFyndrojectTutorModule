@@ -42,6 +42,8 @@ export default{
     },
     data(){
         return{
+            user: "",
+            users: [],
             course:{
                 name:'',
                 description:'',

@@ -96,18 +96,28 @@ export default {
   // },
   methods: {
     registerUser() {
-      let user = {
-        username: this.username,
-        email: this.email,
-        password: this.password,
-        password2: this.password2,
-      };
+      // let user = {
+      //   username: this.username,
+      //   email: this.email,
+      //   password: this.password,
+      //   password2: this.password2,
+      // };
+    
 
+      let user = await axios.post("https://thawing-reaches-79225.herokuapp.com/tutor/user",
+        {
+          username: this.name,
+          email: this.email,
+          password: this.password,
+          password2:this.password2
+        }
+      );
       const { isInvalid, errors } = validateRegisterInput(user);
 
       if (isInvalid) {
         this.errors = errors;
-      } else {
+      } 
+      else {
         this.errors = {};
         // store user in local storage
         if (localStorage.users) {
@@ -120,9 +130,18 @@ export default {
         this.email = "";
         this.password = "";
         this.password2 = "";
-        this.$router.push("/login");
+        this.$router.push("/home");
       }
+      // if (result.status == 201) {
+      //   console.log("HELLO FROM VUE SIGN UP");
+      //   this.$router.push("/login");
+      //   console.log(result.data.user);
+      //   localStorage.setItem("users", JSON.stringify(result.data));
+
+      //   localStorage.setItem("username", result.data.username);
+      // }
     },
+
   },
 };
 </script>

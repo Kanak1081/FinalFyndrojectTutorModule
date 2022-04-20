@@ -1,24 +1,28 @@
-// const mongoose = require('mongoose')
+const mongoose = require('mongoose')
 
-// //User Schema
-// const userSchema = mongoose.Schema({
-//     name : {
-//         type:String,
-//         required:true
-//     },
-//     email:{
-//         type:String,
-//         required:true,
-//         unique:true,
-//         match:/[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/
-//     },
-//     password:{
-//         type:String,
-//         required:true
-//     }
-// })
+//User Schema
+const userSchema = mongoose.Schema({
+    username : {
+        type:String,
+        required:true
+    },
+    email:{
+        type:String,
+        required:true,
+        unique:true,
+        match:/[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/
+    },
+    password:{
+        type:String,
+        required:true
+    },
+    password2:{
+        typeString,
+        required:true
+    }
+})
 
 
-// module.exports = mongoose.model("User",userSchema);
+module.exports = mongoose.model("User",userSchema);
 
 
