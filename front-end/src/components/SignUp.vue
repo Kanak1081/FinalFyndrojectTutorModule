@@ -106,7 +106,7 @@ export default {
 
       let user = await axios.post("https://thawing-reaches-79225.herokuapp.com/tutor/user",
         {
-          username: this.name,
+          username: this.username,
           email: this.email,
           password: this.password,
           password2:this.password2
