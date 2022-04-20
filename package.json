@@ -6,10 +6,22 @@
   "scripts": {
     "start": "node app.js",
     "dev": "nodemon app.js",
-    "heroku-postbuild":"NPM_CONFIG_PRODUCTION=false npm install --prefix front-end && npm run build --prefix front-end"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix front-end && npm run build --prefix front-end"
   },
   "keywords": [
-    "HTML","CSS","Bootstrap","Server","Heroku","MongoDB","Atlas","MongoDB","Compass","APIs","Postman","Node.js","Express.js"
+    "HTML",
+    "CSS",
+    "Bootstrap",
+    "Server",
+    "Heroku",
+    "MongoDB",
+    "Atlas",
+    "MongoDB",
+    "Compass",
+    "APIs",
+    "Postman",
+    "Node.js",
+    "Express.js"
   ],
   "author": "Kanak Yadav",
   "license": "ISC",
@@ -21,6 +33,7 @@
     "mongoose": "^6.2.7",
     "morgan": "^1.10.0",
     "nodemon": "^2.0.15",
-    "razorpay": "^2.8.1"
+    "razorpay": "^2.8.1",
+    "vue-js-modal": "^2.0.1"
   }
 }

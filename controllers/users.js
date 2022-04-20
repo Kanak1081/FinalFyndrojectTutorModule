@@ -50,14 +50,25 @@ const create_user = async(req,res)=>{
 //LOGIN API
 
 const login = (req,res,next)=>{
-   
+   const {email,password} = req.body;
+   if(!(email && password)){
+       res.status(400).send("Field is required")
+   }
     User.find({email:req.body.email.toLowerCase()})
     .exec()
     .then((user)=>{
-        res.status(200).json({
-            message:"Got the current user",
-            user
-        });
+        if(User && (await bcrypt.compare(password,User.password))){
+            return res.status(403).json({
+                message: "Password mismatch"
+            })
+        }
+        else{
+            res.status(200).json({
+                message:"Got the current user",
+                user
+            });
+        }
+        
     })
     .catch((err)=>{
         res.status(500).json({

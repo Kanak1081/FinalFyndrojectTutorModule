@@ -53,6 +53,9 @@ export default {
                 localStorage.setItem("userId",result.data.user[0]._id)
                 this.$router.push('/home')
             }
+            else{
+                alert("Password is incorrect!!")
+            }
             
         }
     },

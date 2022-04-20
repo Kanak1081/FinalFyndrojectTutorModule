@@ -31,6 +31,8 @@
 </template>
 
 <script>
+
+
 import HeaderView from './HeaderView.vue'
 import axios from 'axios'
 export default{
@@ -59,6 +61,7 @@ export default{
                 
             });
             if(result.status==201){
+                alert("Course Added Successfully!!")
                 localStorage.setItem("course-info",JSON.stringify(result.data))
                 this.$router.push({name:'DisplayCourses'})
             }

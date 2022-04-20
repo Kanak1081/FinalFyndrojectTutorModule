@@ -29,8 +29,9 @@ export default {
   padding: 0;
   width: 10%;
   position: fixed;
-    height: 100%; 
+  height: 100%; 
   overflow: auto;
+  background:#069ba2;
 }
 
 .navbar a {
@@ -44,7 +45,7 @@ export default {
 
 .navbar a:hover{
   display: block;
-  background:green;
+  background:black;
    box-shadow:5px 5px 5px 5px 5px green; 
   color: white;
 }

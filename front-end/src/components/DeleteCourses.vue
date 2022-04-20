@@ -45,6 +45,7 @@ export default{
                 let apiURL = `https://thawing-reaches-79225.herokuapp.com/tutor/delete-course/${this.$route.params.id}`;
                 
                 axios.delete(apiURL, this.course).then((res) => {
+                    alert("Course Deleted Successfully!!")
                     console.log(res)
                     this.$router.push({name:'DisplayCourses'})
                 }).catch(error => {

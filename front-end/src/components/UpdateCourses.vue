@@ -53,6 +53,7 @@ export default{
             let apiURL = `https://thawing-reaches-79225.herokuapp.com/tutor/update-course/${this.$route.params.id}`;
 
             axios.post(apiURL, this.course).then((res) => {
+                alert("Course Updated Successfully!!")
                 console.log(res)
                 this.$router.push({name:'DisplayCourses'})
             }).catch(error => {

@@ -72,6 +72,9 @@ export default {
 
         localStorage.setItem("userId", result.data.user._id);
       }
+      else{
+        alert("Email Id already registered!!")
+      }
     },
   },
   mounted() {

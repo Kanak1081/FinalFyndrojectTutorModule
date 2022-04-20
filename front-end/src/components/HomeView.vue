@@ -69,7 +69,7 @@ export default{
     },
     
     beforeCreate () {
-        document.querySelector('body').setAttribute('style', 'background:black')
+        document.querySelector('body').setAttribute('style', 'background:rgb(31 41 55)')
     },
     components:{
         HeaderView
