@@ -57,16 +57,17 @@ const login = (req,res,next)=>{
    User.find({email:req.body.email.toLowerCase()})
     .exec()
     .then((user)=>{
-        if((password.localeCompare(User.password)==0)){
+        if((password.localeCompare(User.password)!=0)){
+            res.status(403).json({
+                message: "Password mismatch"
+            })
+        }
+        else{
             res.status(200).json({
                 message:"Got the current user",
                 user
             });
-        }
-        else{
-            return res.status(403).json({
-                message: "Password mismatch"
-            })
+            
         }
         
     })
