@@ -53,8 +53,8 @@ export default{
         document.querySelector('body').setAttribute('style', 'background:black')
     },
     methods:{  
-        async addCourse(){
-            const result = await axios.post(`https://thawing-reaches-79225.herokuapp.com/tutor/add-course/${localStorage.getItem('userId')}`,{
+        addCourse(){
+            axios.post(`https://thawing-reaches-79225.herokuapp.com/tutor/add-course/${localStorage.getItem('userId')}`,{
                 name:this.course.name,
                 description:this.course.description,
                 videoId:this.course.videoId
