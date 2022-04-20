@@ -93,7 +93,7 @@ const add_single_course = (req,res,next)=>{
         videoId: req.body.videoId
     }).save()
     .then((successResult)=>{
-        res.status(200).json({
+        res.status(201).json({
             message:"New Course Created",
         });
     })
