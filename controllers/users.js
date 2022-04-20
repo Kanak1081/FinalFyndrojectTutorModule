@@ -2,7 +2,7 @@ const User = require("../models/users.js");
 const Course = require("../models/courses.js");
 
 const mongoose = require("mongoose");
-
+const bcrypt = require('bcrypt');
 
 //REGISTER API
 
