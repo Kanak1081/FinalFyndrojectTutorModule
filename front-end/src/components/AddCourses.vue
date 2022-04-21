@@ -56,7 +56,7 @@ export default{
     methods:{  
         addCourse(){
             axios.post(`https://thawing-reaches-79225.herokuapp.com/tutor/add-course/${localStorage.getItem('userId')}`,{
-                id:this.course.userId,
+                //userId:this.course.userId,
                 name:this.course.name,
                 description:this.course.description,
                 videoId:this.course.videoId
