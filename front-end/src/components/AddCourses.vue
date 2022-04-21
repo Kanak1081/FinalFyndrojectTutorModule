@@ -62,7 +62,6 @@ export default{
                 videoId:this.course.videoId
                 
             })
-            console.log(id)
             .then((result)=>{
                 alert("Course Added Successfully!!")
                 localStorage.setItem("course-info",JSON.stringify(result.data))
