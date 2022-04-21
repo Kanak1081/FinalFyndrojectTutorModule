@@ -1,4 +1,5 @@
 <template>
+<fragment>
 <div class="container-fluid" id="title">
     <div class="row">
         <div class="col-lg-12">
@@ -32,7 +33,7 @@
 <footer style="color:white;font-weight:500;text-align:center;position:fixed;bottom:0;left:auto;right:auto">
     <p>Made with ❤ by Kanak Yadav</p>
 </footer>
-
+</fragment>
 </template>
 
 <script>

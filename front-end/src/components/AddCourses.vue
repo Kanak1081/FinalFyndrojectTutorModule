@@ -56,11 +56,13 @@ export default{
     methods:{  
         addCourse(){
             axios.post(`https://thawing-reaches-79225.herokuapp.com/tutor/add-course/${localStorage.getItem('userId')}`,{
+                id:this.course.userId,
                 name:this.course.name,
                 description:this.course.description,
                 videoId:this.course.videoId
                 
             })
+            console.log(id)
             .then((result)=>{
                 alert("Course Added Successfully!!")
                 localStorage.setItem("course-info",JSON.stringify(result.data))
