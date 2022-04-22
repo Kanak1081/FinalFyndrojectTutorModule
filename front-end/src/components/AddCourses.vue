@@ -18,7 +18,7 @@
         </div>
         <div class="mt-3">
             <label class="fs-5 fw-bold text-white text-right">Enter Video ID</label><br>
-            <div><p style="color:white;">(https://www.youtube.com/watch?v=<span style="color:#069ba2">V7LwfY5U5WI</span> )</p></div>
+            <div style="float:left"><p style="color:white;">(https://www.youtube.com/watch?v=<span style="color:#069ba2">V7LwfY5U5WI</span> )</p></div>
             <input v-model="course.videoId" type="text" name="videoId" placeholder="Enter Video Id" >
         </div>
         <div class="mt-4">
