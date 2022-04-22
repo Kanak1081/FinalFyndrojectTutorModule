@@ -8,11 +8,11 @@
             <div class="col-lg-4">
                 <div class="mt-4">
                     <label class="fs-5 fw-bold text-white">Email</label>
-                    <input type="text" v-model="email" placeholder="Enter Email">
+                    <input type="text" v-model="email" placeholder="Enter Email" required>
                 </div>
                 <div class="mt-4">
                     <label class="fs-5 fw-bold text-white">Password</label>
-                    <input type="password" v-model="password" placeholder="Enter Password">
+                    <input type="password" v-model="password" placeholder="Enter Password" required>
                 </div>
                 <div class="mt-4">
                     <button id="loginBTN" v-on:click="login" class="btn btn-rounded">Log In</button>

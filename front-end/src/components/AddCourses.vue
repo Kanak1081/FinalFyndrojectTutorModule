@@ -17,7 +17,7 @@
             <input v-model="course.description"  type="text" name="description" placeholder="Enter Description" >
         </div>
         <div class="mt-3">
-            <label class="fs-5 fw-bold text-white text-right">Enter Video ID</label>
+            <label class="fs-5 fw-bold text-white text-right">Enter Video ID(Take the highlighted part from your youtube video : https://www.youtube.com/watch?v=<span style="color:#069ba2">V7LwfY5U5WI</span> )</label>
             <input v-model="course.videoId" type="text" name="videoId" placeholder="Enter Video Id" >
         </div>
         <div class="mt-4">

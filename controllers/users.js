@@ -2,17 +2,15 @@ const User = require("../models/users.js");
 const Course = require("../models/courses.js");
 
 const mongoose = require("mongoose");
-//const bcrypt = require('bcrypt');
+
 
 //REGISTER API
 
 const create_user = async(req,res)=>{
+
     User.find({email:req.body.email})
     .exec()
-    .then(user=>{
-        console.log("This is the user");
-        console.log(user);
-        //console.log("User ends");
+    .then(user=>{ 
         //2. If user email is found. That means user already exists which means we have to return a conflict
         if(user.length>=1){
             return res.status(409).json({
@@ -28,9 +26,6 @@ const create_user = async(req,res)=>{
             })
             user.save()
             .then(user=>{
-                console.log("This is the result from saving the user.")
-                console.log(user);
-                console.log("HEllo coming from backend")
                 res.status(201).json({
                     message:"user successfully created",
                     user
@@ -57,18 +52,10 @@ const login = (req,res,next)=>{
    User.find({email:req.body.email.toLowerCase()})
     .exec()
     .then((user)=>{
-        // if((password.localeCompare(User.password)!=0)){
-        //     res.status(403).json({
-        //         message: "Password mismatch"
-        //     })
-        // }
-        // else{
             res.status(200).json({
                 message:"Got the current user",
                 user
             });
-            
-        //}
         
     })
     .catch((err)=>{
@@ -85,7 +72,6 @@ const login = (req,res,next)=>{
 const add_single_course = (req,res,next)=>{
    
     const useRrId = req.params.userId
-    console.log(useRrId)
     new Course({
         userId:useRrId,
         name: req.body.name,
@@ -108,11 +94,9 @@ const add_single_course = (req,res,next)=>{
 const get_all_courses = (req,res,next)=>{
    
     const useRrId = req.params.userId
-    console.log(useRrId)
     Course.find({userId:useRrId})
     .exec()
     .then((courses)=>{
-        console.log(courses)
         res.status(200).json({
             message:"Got all courses successfully",
             courses
@@ -126,12 +110,10 @@ const get_all_courses = (req,res,next)=>{
 
 const get_count = (req,res)=>{
     const useRrId = req.params.userId
-    console.log(useRrId)
     Course.find({userId:useRrId})
     .exec()
     .then((courses)=>{
         var count = courses.length
-        console.log(count)
         res.json({count})
     })
     .catch(
