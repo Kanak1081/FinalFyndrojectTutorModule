@@ -13,16 +13,17 @@
             type="text"
             v-model="name"
             placeholder="Enter Name"
-            required
+            required="true"
+            pattern="[a-zA-z]+"
           />
         </div>
         <div class="mt-4">
           <label class="fs-5 fw-bold text-white">Email</label>
-          <input type="text" v-model="email" placeholder="Enter Email" required/>
+          <input type="text" v-model="email" placeholder="Enter Email" required="true" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"/>
         </div>
         <div class="mt-4">
           <label class="fs-5 fw-bold text-white">Password</label>
-          <input type="password" v-model="password" placeholder="Enter Password" required/>
+          <input type="password" v-model="password" placeholder="Enter Password" required="true"/>
         </div>
         <div class="mt-4">
           <button id="registerBTN" v-on:click="signUp" class="btn btn-rounded">
