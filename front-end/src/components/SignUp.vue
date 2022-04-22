@@ -6,12 +6,6 @@
     <div class="row">
       <div class="col-lg-4"></div>
       <div class="col-lg-4">
-        <p v-if="errors.length">
-          <b style="color:white;font-size:16px">Please correct the following error(s):</b>
-          <ul>
-            <li v-for="error in errors" :key="error">{{ error }}</li>
-          </ul>
-        </p>
         <div class="mt-4">
           <label class="fs-5 fw-bold text-white">Name</label>
           <input
@@ -30,7 +24,7 @@
           <input type="password" v-model="password" placeholder="Enter Password" />
         </div>
         <div class="mt-4">
-          <button id="registerBTN" v-on:click="signUp(); checkForm();" class="btn btn-rounded">
+          <button id="registerBTN" v-on:click="signUp" class="btn btn-rounded">
             Sign Up
           </button>
         </div>
@@ -62,27 +56,6 @@ export default {
   },
 
   methods: {
-    checkForm:{
-      function(e) {
-          if (this.name && this.email && this.password) {
-            return true;
-          }
-
-          this.errors = [];
-
-          if (!this.name) {
-            this.errors.push('Name required.');
-          }
-          if (!this.email) {
-            this.errors.push('Email required.');
-          }
-          if (!this.password) {
-            this.errors.push('Password required.');
-          }
-
-          e.preventDefault();
-        }
-    },
     async signUp() {
       let result = await axios.post(
         "https://thawing-reaches-79225.herokuapp.com/tutor/user",
